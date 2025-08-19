@@ -171,7 +171,7 @@ export default function registerHooks() {
     if (activeEffect.disabled === !item.system.worn) return;
 
     // On met à jour l'effet en fonction du fait que l'item est équipé ou non
-    activeEffect.update({ disabled: !itemData.worn });
+    activeEffect.update({ disabled: !item.system.worn });
   });
 
   Hooks.on("pauseGame", async () => {

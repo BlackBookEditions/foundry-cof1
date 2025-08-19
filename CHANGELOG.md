@@ -1,3 +1,8 @@
+13.347.0
+--------
+- Compatibilité V13.347
+- Correction d'un bug dans la gestion des effets actifs des objets équipables
+
 12.343.1
 --------
 - Correction sur l'application des dégâts (pour permettre la modification du maximum par effet)
