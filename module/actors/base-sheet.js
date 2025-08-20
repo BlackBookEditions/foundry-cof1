@@ -3,7 +3,11 @@
  * @extends {ActorSheet}
  */
 
-export class CofBaseSheet extends ActorSheet {
+export class 
+CofBaseSheet extends foundry.appv1.sheets.ActorSheet {
+    // Variable to check if the appV1 is used : will remove warning
+    // To migrate before V16
+    static _warnedAppV1 = true;
 
     /**
      * @name getPackPrefix

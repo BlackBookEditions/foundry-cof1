@@ -72,8 +72,8 @@ export class Capacity {
 
         // Mise à jour des capacités apprises en se basant sur le champ key
         let items = actor.items.filter(i => i.type === "capacity" && i.system.path?._id === pathId);
-        let itemsIds = items.map(i => i.flags.core.sourceId.split(".").pop());
-        
+        let itemsIds = items.map(i => i.flags.core.sourceId ? i.flags.core.sourceId.split(".").pop() : i._stats.compendiumSource.split(".").pop());
+
         if (isUncheck) {
             const uncheckedKeys = capacities.filter(c => !c.data.checked).map(c => c.data.key);
             const itemsKeys = items.map(i => i.system.key);

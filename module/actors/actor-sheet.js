@@ -351,7 +351,7 @@ export class CofActorSheet extends CofBaseSheet {
       activable: item.system.properties.activable,
     };
 
-    const html = await renderTemplate("systems/cof/templates/chat/item-card.hbs", templateData);
+    const html = await foundry.applications.handlebars.renderTemplate("systems/cof/templates/chat/item-card.hbs", templateData);
     let chatData = {
       speaker: ChatMessage.getSpeaker(),
       content: html,
@@ -687,7 +687,7 @@ export class CofActorSheet extends CofBaseSheet {
     // Gestion des boutons de modification des effets (visible pour l'actor si il en propriétaire)
     context.isEffectsEditable = options.editable;
 
-    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true });
+    context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, { async: true });
 
     context.diceValues = COF.DICE_VALUES;
 

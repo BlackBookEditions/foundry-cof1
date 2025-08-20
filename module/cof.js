@@ -57,23 +57,23 @@ Hooks.once("init", async function () {
   };
 
   // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
-  Items.unregisterSheet("core", ItemSheet);
+  foundry.documents.collections.Actors.unregisterSheet("core", ActorSheet);
+  foundry.documents.collections.Items.unregisterSheet("core", ItemSheet);
 
   // Register actor sheets
-  Actors.registerSheet("cof", CofActorSheet, {
+  foundry.documents.collections.Actors.registerSheet("cof", CofActorSheet, {
     types: ["character", "npc", "encounter"],
     makeDefault: true,
     label: "COF.sheet.character",
   });
   // Register actor sheets
-  Actors.registerSheet("cof", CofLootSheet, {
+  foundry.documents.collections.Actors.registerSheet("cof", CofLootSheet, {
     types: ["loot"],
     makeDefault: true,
     label: "COF.sheet.loot",
   });
   // Register item sheets
-  Items.registerSheet("cof", CofItemSheet, {
+  foundry.documents.collections.Items.registerSheet("cof", CofItemSheet, {
     types: ["item", "capacity", "profile", "path", "species"],
     makeDefault: true,
     label: "COF.sheet.item",

@@ -331,58 +331,58 @@ h3 {
 /* ----------------------------------------- */
 /*  Flexbox                                  */
 /* ----------------------------------------- */
-.flexrow {
+.cof .window-content .flexrow {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-.flexrow > * {
+.cof .window-content .flexrow > * {
   flex: 1;
 }
-.flexrow .flex1 {
+.cof .window-content .flexrow .flex1 {
   flex: 1;
 }
-.flexrow .flex2 {
+.cof .window-content .flexrow .flex2 {
   flex: 2;
 }
-.flexrow .flex3 {
+.cof .window-content .flexrow .flex3 {
   flex: 3;
 }
-.flexrow .flex4 {
+.cof .window-content .flexrow .flex4 {
   flex: 4;
 }
-.flexrow .flex5 {
+.cof .window-content .flexrow .flex5 {
   flex: 5;
 }
-.flexrow .flex6 {
+.cof .window-content .flexrow .flex6 {
   flex: 6;
 }
-.flexrow .flex7 {
+.cof .window-content .flexrow .flex7 {
   flex: 7;
 }
-.flexrow .flex8 {
+.cof .window-content .flexrow .flex8 {
   flex: 8;
 }
-.flexrow .flex9 {
+.cof .window-content .flexrow .flex9 {
   flex: 9;
 }
-.flexcol {
+.cof .window-content .flexcol {
   display: flex;
   flex-flow: column nowrap;
 }
-.flexcol > * {
+.cof .window-content .flexcol > * {
   flex: 1;
 }
-.flexcol .flex1 {
+.cof .window-content .flexcol .flex1 {
   flex: 1;
 }
-.flexcol .flex2 {
+.cof .window-content .flexcol .flex2 {
   flex: 2;
 }
-.flexcol .flex3 {
+.cof .window-content .flexcol .flex3 {
   flex: 3;
 }
-.flexcol .flex4 {
+.cof .window-content .flexcol .flex4 {
   flex: 4;
 }
 .flex-group-center,
@@ -431,20 +431,32 @@ h3 {
 .no-wrap {
   flex-wrap: nowrap !important;
 }
+h3 {
+  border-bottom: none;
+}
+.message {
+  font-family: "Signika", sans-serif;
+}
+.message h2,
+.message h3 {
+  font-family: "Signika", sans-serif;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-weight: normal;
+}
+.message h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #782e22;
+}
+.message h3 {
+  font-size: 1.25em;
+}
 .message-header h2.damage {
   color: darkred;
   font-weight: bold;
 }
-.message-header h2.heal {
-  color: darkgreen;
-  font-weight: bold;
-}
 .message-header h2.critical {
   color: green;
-  font-weight: bold;
-}
-.message-header h2.standard {
-  color: #005477;
   font-weight: bold;
 }
 .message-header h2.fumble {
@@ -1808,7 +1820,6 @@ Copied from dnd5e
 }
 .cof .inventory-list .item-name {
   color: #4b4a44;
-  min-width: 100px;
 }
 .cof .inventory-list .item-detail {
   flex: 0 0 45px;
