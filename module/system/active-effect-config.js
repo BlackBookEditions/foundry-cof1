@@ -1,6 +1,6 @@
 import { COF } from "./config.js";
 
-export class COFActiveEffectConfig extends ActiveEffectConfig {
+export class COFActiveEffectConfig extends foundry.applications.sheets.ActiveEffectConfig {
 
     get template() {
         return "systems/cof/templates/effects/active-effect-config.hbs";

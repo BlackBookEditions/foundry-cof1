@@ -57,8 +57,8 @@ Hooks.once("init", async function () {
   };
 
   // Register sheet application classes
-  foundry.documents.collections.Actors.unregisterSheet("core", ActorSheet);
-  foundry.documents.collections.Items.unregisterSheet("core", ItemSheet);
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Items.unregisterSheet("core",  foundry.appv1.sheets.ItemSheet);
 
   // Register actor sheets
   foundry.documents.collections.Actors.registerSheet("cof", CofActorSheet, {
