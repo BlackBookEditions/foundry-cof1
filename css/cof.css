@@ -331,77 +331,6 @@ h3 {
 /* ----------------------------------------- */
 /*  Flexbox                                  */
 /* ----------------------------------------- */
-.flexrow {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-.flexrow > * {
-  flex: 1;
-}
-.flexrow .flex1 {
-  flex: 1;
-}
-.flexrow .flex2 {
-  flex: 2;
-}
-.flexrow .flex3 {
-  flex: 3;
-}
-.flexrow .flex4 {
-  flex: 4;
-}
-.flexrow .flex5 {
-  flex: 5;
-}
-.flexrow .flex6 {
-  flex: 6;
-}
-.flexrow .flex7 {
-  flex: 7;
-}
-.flexrow .flex8 {
-  flex: 8;
-}
-.flexrow .flex9 {
-  flex: 9;
-}
-.flexcol {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.flexcol > * {
-  flex: 1;
-}
-.flexcol .flex1 {
-  flex: 1;
-}
-.flexcol .flex2 {
-  flex: 2;
-}
-.flexcol .flex3 {
-  flex: 3;
-}
-.flexcol .flex4 {
-  flex: 4;
-}
-.flex-group-center,
-.flex-group-left,
-.flex-group-right {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5px;
-  border: 1px solid #999;
-}
-.flex-group-left {
-  justify-content: flex-start;
-  text-align: left;
-}
-.flex-group-right {
-  justify-content: flex-end;
-  text-align: right;
-}
 .center {
   text-align: center;
   display: flex;
@@ -420,31 +349,35 @@ h3 {
   display: flex;
   align-items: center;
 }
-.flex-center {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.flex-between {
-  justify-content: space-between;
-}
 .no-wrap {
   flex-wrap: nowrap !important;
+}
+h3 {
+  border-bottom: none;
+}
+.message {
+  font-family: "Signika", sans-serif;
+}
+.message h2,
+.message h3 {
+  font-family: "Signika", sans-serif;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-weight: normal;
+}
+.message h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #782e22;
+}
+.message h3 {
+  font-size: 1.25em;
 }
 .message-header h2.damage {
   color: darkred;
   font-weight: bold;
 }
-.message-header h2.heal {
-  color: darkgreen;
-  font-weight: bold;
-}
 .message-header h2.critical {
   color: green;
-  font-weight: bold;
-}
-.message-header h2.standard {
-  color: #005477;
   font-weight: bold;
 }
 .message-header h2.fumble {
@@ -1346,7 +1279,6 @@ Copied from dnd5e
 .cof.item .window-content .sheet-navigation .item {
   height: 35px;
   line-height: 37px;
-  margin: 5px 24px 0 24px ;
   border-bottom: 3px solid #b5b3a4;
   font-size: 18px;
 }
@@ -1680,38 +1612,60 @@ Copied from dnd5e
 .cof input::placeholder {
   color: lightgray;
 }
-.cof nav.sheet-tabs {
+.cof nav.sheet-tabs,
+.cof nav.sheet-navigation {
   border: none;
 }
-.cof nav.sheet-tabs.tabs {
+.cof nav.sheet-tabs.tabs,
+.cof nav.sheet-navigation.tabs {
   font: 14px 'Signika', sans-serif;
   color: #464331c4;
   text-align: center;
   border: none;
   justify-content: center;
+  display: flex;
+  font-size: 0;
+  gap: 0;
 }
-.cof nav.sheet-tabs.tabs .item {
+.cof nav.sheet-tabs.tabs .item,
+.cof nav.sheet-navigation.tabs .item {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   padding: 5px;
   border: 1px solid #736953a6;
+  border-right: none;
   margin: 0;
   height: 28px;
   box-shadow: 0 0 10px #00000052 inset;
   background: rgba(0, 0, 0, 0.05);
-  width: 16.66%;
+  flex: 1;
+  position: relative;
+  font-size: 14px;
 }
-.cof nav.sheet-tabs.tabs .item:hover {
+.cof nav.sheet-tabs.tabs .item:last-child,
+.cof nav.sheet-navigation.tabs .item:last-child {
+  border-right: 1px solid #736953a6;
+}
+.cof nav.sheet-tabs.tabs .item:hover,
+.cof nav.sheet-navigation.tabs .item:hover {
   color: #464331c4;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
+  z-index: 1;
 }
-.cof nav.sheet-tabs.tabs .item.active {
+.cof nav.sheet-tabs.tabs .item.active,
+.cof nav.sheet-navigation.tabs .item.active {
   color: #464331c4;
-  border: 1px inset #736953a6;
+  border: 1px solid #736953a6;
+  border-right: none;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
+  z-index: 2;
+}
+.cof nav.sheet-tabs.tabs .item.active:last-child,
+.cof nav.sheet-navigation.tabs .item.active:last-child {
+  border-right: 1px solid #736953a6;
 }
 .cof .currencies {
   margin: 0 0 5px 0;
@@ -1808,7 +1762,6 @@ Copied from dnd5e
 }
 .cof .inventory-list .item-name {
   color: #4b4a44;
-  min-width: 100px;
 }
 .cof .inventory-list .item-detail {
   flex: 0 0 45px;

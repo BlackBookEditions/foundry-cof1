@@ -3,7 +3,7 @@ export class CharacterGeneration {
     static async _buildStatsMessage(actor, flavor, rolls) {
         const tpl = 'systems/cof/templates/chat/stats-roll-card.hbs';
         const grandTotal = rolls.map(r => r.total).reduce((acc, val) => acc + val);
-        renderTemplate(tpl, { rolls:rolls, grandTotal: grandTotal}).then(html => {
+        foundry.applications.handlebars.renderTemplate(tpl, { rolls:rolls, grandTotal: grandTotal}).then(html => {
             let msgData = {
                 user: game.user._id,
                 flavor: flavor,

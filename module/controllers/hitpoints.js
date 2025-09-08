@@ -27,8 +27,8 @@ export class Hitpoints {
     static onClickChatMessageApplyButton(event, html, data){
         const btn = $(event.currentTarget);
         const btnType = btn.data("apply");
-        const dmg = parseInt(html.find(".dice-total").text());
-        const dr = html.find("#dr").is(":checked");
+        const dmg = parseInt(html.querySelector(".dice-total").textContent);
+        const dr = html.querySelector("#dr").checked;
         switch(btnType){
             case "full"   : Hitpoints.applyToTargets(-dmg, dr); break;
             case "half"   : Hitpoints.applyToTargets(-Math.ceil(dmg/2), dr); break;

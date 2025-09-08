@@ -8,7 +8,10 @@ import { COF, System } from "../system/config.js";
 import { ArrayUtils } from "../utils/array-utils.js";
 import { COFActiveEffectConfig } from "../system/active-effect-config.js";
 
-export class CofItemSheet extends ItemSheet {
+export class CofItemSheet extends foundry.appv1.sheets.ItemSheet {
+    // Variable to check if the appV1 is used : will remove warning
+    // To migrate before V16
+    static _warnedAppV1 = true;
 
     /** @override */
     static get defaultOptions() {
@@ -97,7 +100,7 @@ export class CofItemSheet extends ItemSheet {
             ev.preventDefault();
             if (!this.isEditable) return;
             return this.item.createEmbeddedDocuments("ActiveEffect", [{
-                label: game.i18n.localize("COF.ui.newEffect"),
+                name: game.i18n.localize("COF.ui.newEffect"),
                 img: "icons/svg/aura.svg",
                 origin: this.item.uuid,
                 tint: "#050505",
@@ -474,7 +477,7 @@ export class CofItemSheet extends ItemSheet {
         // Les boutons sont masqués si l'item appartient à un actor ou est verrouillé
         context.isEffectsEditable = !this.item.actor && options.editable;
         context.system = context.item.system;
-        context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+        context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, {async: true});
 
         return context;       
     }

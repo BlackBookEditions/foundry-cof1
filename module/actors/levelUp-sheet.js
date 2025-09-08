@@ -283,7 +283,7 @@ export class LevelUpSheet extends FormApplication {
             paths: this.levelData.paths
         }
 
-        renderTemplate("systems/cof/templates/chat/levelUp-card.hbs", messageData).then((flavor)=>{
+        foundry.applications.handlebars.renderTemplate("systems/cof/templates/chat/levelUp-card.hbs", messageData).then((flavor)=>{
             ChatMessage.create({
                 //"type": CONST.CHAT_MESSAGE_TYPES.WHISPER,
                 "flavor": flavor,

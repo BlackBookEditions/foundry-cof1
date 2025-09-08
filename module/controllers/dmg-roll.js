@@ -31,7 +31,7 @@ export class CofDamageRoll {
             hasDescription : this._description && this._description.length > 0,
 			description : this._description
         };
-        return renderTemplate(rollMessageTpl, tplData);
+        return foundry.applications.handlebars.renderTemplate(rollMessageTpl, tplData);
     }
 
 }

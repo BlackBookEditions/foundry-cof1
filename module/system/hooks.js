@@ -114,32 +114,43 @@ export default function registerHooks() {
     }
   });
 
-  Hooks.on("renderChatMessage", (message, html, data) => {
+  Hooks.on("renderChatMessageHTML", (app, html, data) => {
     // Affiche ou non les boutons d'application des dommages
     if (game.settings.get("cof", "displayChatDamageButtonsToAll")) {
-      html.find(".apply-dmg").click((ev) => Hitpoints.onClickChatMessageApplyButton(ev, html, data));
+      html.querySelectorAll(".apply-dmg").forEach((btn) => {
+        btn.addEventListener("click", (ev) => Hitpoints.onClickChatMessageApplyButton(ev, html, data))
+      })
     } else {
       if (game.user.isGM) {
-        html.find(".apply-dmg").click((ev) => Hitpoints.onClickChatMessageApplyButton(ev, html, data));
+        html.querySelectorAll(".apply-dmg").forEach((btn) => {
+          btn.addEventListener("click", (ev) => Hitpoints.onClickChatMessageApplyButton(ev, html, data))
+        })
       } else {
-        html.find(".apply-dmg").each((i, btn) => {
-          btn.style.display = "none";
-        });
-        html.find(".dr-checkbox").each((i, btn) => {
-          btn.style.display = "none";
-        });
+        html.querySelectorAll(".apply-dmg").forEach((btn) => {
+          btn.style.display = "none"
+        })
+        html.querySelectorAll(".dr-checkbox").forEach((btn) => {
+          btn.style.display = "none"
+        })
       }
     }
-
     // Affiche ou non la difficulté
-    const displayDifficulty = game.settings.get("cof", "displayDifficulty");
+    const displayDifficulty = game.settings.get("cof", "displayDifficulty")
     if (displayDifficulty === "none" || (displayDifficulty === "gm" && !game.user.isGM)) {
-      html.find(".display-difficulty").each((i, elt) => {
-        elt.remove();
-      });
+      html.querySelectorAll(".display-difficulty").forEach((elt) => {
+        elt.remove()
+      })
     }
-  });
 
+    html.querySelectorAll(".item-chat").forEach((btn) => {
+      btn.addEventListener("click", async (event) => {
+        event.preventDefault()
+        const uuid = btn.dataset.itemUuid
+        let item = await fromUuid(uuid)
+        if (item) item.sheet.render(true)
+      })
+    })
+  })
   /**
    * Intercepte la création d'un active effect
    * Si l'effet provient d'un item équipable, on disable l'effet si l'item n'est pas équipé (par défaut il n'est pas équipé)
@@ -171,7 +182,7 @@ export default function registerHooks() {
     if (activeEffect.disabled === !item.system.worn) return;
 
     // On met à jour l'effet en fonction du fait que l'item est équipé ou non
-    activeEffect.update({ disabled: !itemData.worn });
+    activeEffect.update({ disabled: !item.system.worn });
   });
 
   Hooks.on("pauseGame", async () => {

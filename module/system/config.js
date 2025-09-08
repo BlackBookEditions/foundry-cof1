@@ -226,9 +226,9 @@ COF.activeEffectChanges = {
 }
 
 COF.applicationsToLockDuringPause = [
-    ActorSheet,
-    ItemSheet,
-    ActiveEffectConfig
+    foundry.appv1.sheets.ActorSheet,
+    foundry.appv1.sheets.ItemSheet,
+    foundry.applications.sheets.ActiveEffectConfig
 ];
 
 /**

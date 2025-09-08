@@ -354,7 +354,7 @@ export class CofRoll {
     }
     if (rollMode) dialogRollMode = rollMode;
 
-    const rollOptionContent = await renderTemplate(rollOptionTpl, {
+    const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
       mod,
       bonus,
       malus,
@@ -437,7 +437,7 @@ export class CofRoll {
     }
     if (rollMode) dialogRollMode = rollMode;
 
-    const rollOptionContent = await renderTemplate(rollOptionTpl, {
+    const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
       mod: mod,
       bonus: bonus,
       malus: malus,
@@ -526,7 +526,7 @@ export class CofRoll {
     }
     if (rollMode) dialogRollMode = rollMode;
 
-    const rollOptionContent = await renderTemplate(rollOptionTpl, {
+    const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
       dmgFormula: formula,
       dmgBonus: dmgBonus,
       dmgCustomFormula: "",
