@@ -100,7 +100,7 @@ export class CofItemSheet extends foundry.appv1.sheets.ItemSheet {
             ev.preventDefault();
             if (!this.isEditable) return;
             return this.item.createEmbeddedDocuments("ActiveEffect", [{
-                label: game.i18n.localize("COF.ui.newEffect"),
+                name: game.i18n.localize("COF.ui.newEffect"),
                 img: "icons/svg/aura.svg",
                 origin: this.item.uuid,
                 tint: "#050505",

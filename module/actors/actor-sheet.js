@@ -134,7 +134,7 @@ export class CofActorSheet extends CofBaseSheet {
       ev.preventDefault();
       return this.actor.createEmbeddedDocuments("ActiveEffect", [
         {
-          label: game.i18n.localize("COF.ui.newEffect"),
+          name: game.i18n.localize("COF.ui.newEffect"),
           img: "icons/svg/aura.svg",
           origin: this.actor.uuid,
           "duration.rounds": undefined,

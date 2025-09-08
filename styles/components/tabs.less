@@ -1,4 +1,5 @@
-nav.sheet-tabs {
+nav.sheet-tabs,
+nav.sheet-navigation {
   border: none;
 
   &.tabs {
@@ -7,6 +8,7 @@ nav.sheet-tabs {
     text-align: center;
     border: none;
     justify-content: center;
+    display: flex;
 
     .item {
       .ellipse();
@@ -16,7 +18,7 @@ nav.sheet-tabs {
       height: 28px;
       box-shadow: 0 0 10px @c-shadow inset;
       background:rgba(0,0,0,0.05);
-      width: 16.66%;
+      flex: 1;
       &:hover {
         color: @c-darkbrown;
         background:rgba(0,0,0,0.2);

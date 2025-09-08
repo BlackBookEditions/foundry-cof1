@@ -331,77 +331,6 @@ h3 {
 /* ----------------------------------------- */
 /*  Flexbox                                  */
 /* ----------------------------------------- */
-.cof .window-content .flexrow {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-.cof .window-content .flexrow > * {
-  flex: 1;
-}
-.cof .window-content .flexrow .flex1 {
-  flex: 1;
-}
-.cof .window-content .flexrow .flex2 {
-  flex: 2;
-}
-.cof .window-content .flexrow .flex3 {
-  flex: 3;
-}
-.cof .window-content .flexrow .flex4 {
-  flex: 4;
-}
-.cof .window-content .flexrow .flex5 {
-  flex: 5;
-}
-.cof .window-content .flexrow .flex6 {
-  flex: 6;
-}
-.cof .window-content .flexrow .flex7 {
-  flex: 7;
-}
-.cof .window-content .flexrow .flex8 {
-  flex: 8;
-}
-.cof .window-content .flexrow .flex9 {
-  flex: 9;
-}
-.cof .window-content .flexcol {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.cof .window-content .flexcol > * {
-  flex: 1;
-}
-.cof .window-content .flexcol .flex1 {
-  flex: 1;
-}
-.cof .window-content .flexcol .flex2 {
-  flex: 2;
-}
-.cof .window-content .flexcol .flex3 {
-  flex: 3;
-}
-.cof .window-content .flexcol .flex4 {
-  flex: 4;
-}
-.flex-group-center,
-.flex-group-left,
-.flex-group-right {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5px;
-  border: 1px solid #999;
-}
-.flex-group-left {
-  justify-content: flex-start;
-  text-align: left;
-}
-.flex-group-right {
-  justify-content: flex-end;
-  text-align: right;
-}
 .center {
   text-align: center;
   display: flex;
@@ -419,14 +348,6 @@ h3 {
   text-align: right;
   display: flex;
   align-items: center;
-}
-.flex-center {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.flex-between {
-  justify-content: space-between;
 }
 .no-wrap {
   flex-wrap: nowrap !important;
@@ -1692,17 +1613,21 @@ Copied from dnd5e
 .cof input::placeholder {
   color: lightgray;
 }
-.cof nav.sheet-tabs {
+.cof nav.sheet-tabs,
+.cof nav.sheet-navigation {
   border: none;
 }
-.cof nav.sheet-tabs.tabs {
+.cof nav.sheet-tabs.tabs,
+.cof nav.sheet-navigation.tabs {
   font: 14px 'Signika', sans-serif;
   color: #464331c4;
   text-align: center;
   border: none;
   justify-content: center;
+  display: flex;
 }
-.cof nav.sheet-tabs.tabs .item {
+.cof nav.sheet-tabs.tabs .item,
+.cof nav.sheet-navigation.tabs .item {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -1712,14 +1637,16 @@ Copied from dnd5e
   height: 28px;
   box-shadow: 0 0 10px #00000052 inset;
   background: rgba(0, 0, 0, 0.05);
-  width: 16.66%;
+  flex: 1;
 }
-.cof nav.sheet-tabs.tabs .item:hover {
+.cof nav.sheet-tabs.tabs .item:hover,
+.cof nav.sheet-navigation.tabs .item:hover {
   color: #464331c4;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
 }
-.cof nav.sheet-tabs.tabs .item.active {
+.cof nav.sheet-tabs.tabs .item.active,
+.cof nav.sheet-navigation.tabs .item.active {
   color: #464331c4;
   border: 1px inset #736953a6;
   background: rgba(0, 0, 0, 0.2);
