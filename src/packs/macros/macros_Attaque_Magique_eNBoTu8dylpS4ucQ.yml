@@ -1,0 +1,29 @@
+_id: eNBoTu8dylpS4ucQ
+name: Attaque Magique
+type: script
+author: 9RNwlVuBKg8gXYwl
+img: systems/cof/ui/macros/icons/ATM.webp
+scope: global
+command: >-
+  // rollStatMacro(actor, stat, bonus = 0, malus = 0, onEnter = "submit", label,
+  description, dialog = true, dice = "1d20", difficulty)
+
+  game.cof.macros.rollStatMacro(game.cof.macros.getSpeakersActor(), "magic");
+folder: null
+sort: 0
+flags:
+  core: {}
+_stats:
+  coreVersion: '13.347'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: Macro.WjBKSOCymV5zWwhu
+  duplicateSource: null
+  exportSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+_key: '!macros!eNBoTu8dylpS4ucQ'

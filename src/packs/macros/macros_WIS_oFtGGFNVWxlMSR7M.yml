@@ -1,0 +1,29 @@
+_id: oFtGGFNVWxlMSR7M
+name: WIS
+type: script
+author: 9RNwlVuBKg8gXYwl
+img: systems/cof/ui/macros/icons/WIS.webp
+scope: global
+command: >-
+  // rollStatMacro(actor, stat, bonus = 0, malus = 0, onEnter = "submit", label,
+  description, dialog = true, dice = "1d20", difficulty)
+
+  game.cof.macros.rollStatMacro(game.cof.macros.getSpeakersActor(), "wis");
+folder: null
+sort: 0
+flags:
+  core: {}
+_stats:
+  coreVersion: '13.347'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: Macro.ncqnC1Jh9kFxFRn9
+  duplicateSource: null
+  exportSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+_key: '!macros!oFtGGFNVWxlMSR7M'

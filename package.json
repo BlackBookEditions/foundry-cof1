@@ -1,20 +1,24 @@
 {
   "name": "cof",
-  "version": "1.0.0",
-  "description": "CSS compiler for the Chroniques Oubliées Fantasy system",
+  "version": "2.0.0",
   "scripts": {
     "css": "gulp css",
     "watch": "gulp",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "LDBtoYML": "node ./tools/LDBtoYML.mjs",
+    "YMLtoLDB": "node ./tools/YMLtoLDB.mjs"
   },
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "Zigmund",
+  "author": "Kristov",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1"
+    "gulp": "^5.0.0",
+    "gulp-less": "^5.0.0"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.0"
   }
 }
