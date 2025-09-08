@@ -1279,7 +1279,6 @@ Copied from dnd5e
 .cof.item .window-content .sheet-navigation .item {
   height: 35px;
   line-height: 37px;
-  margin: 5px 24px 0 24px ;
   border-bottom: 3px solid #b5b3a4;
   font-size: 18px;
 }
@@ -1625,6 +1624,8 @@ Copied from dnd5e
   border: none;
   justify-content: center;
   display: flex;
+  font-size: 0;
+  gap: 0;
 }
 .cof nav.sheet-tabs.tabs .item,
 .cof nav.sheet-navigation.tabs .item {
@@ -1633,24 +1634,38 @@ Copied from dnd5e
   white-space: nowrap;
   padding: 5px;
   border: 1px solid #736953a6;
+  border-right: none;
   margin: 0;
   height: 28px;
   box-shadow: 0 0 10px #00000052 inset;
   background: rgba(0, 0, 0, 0.05);
   flex: 1;
+  position: relative;
+  font-size: 14px;
+}
+.cof nav.sheet-tabs.tabs .item:last-child,
+.cof nav.sheet-navigation.tabs .item:last-child {
+  border-right: 1px solid #736953a6;
 }
 .cof nav.sheet-tabs.tabs .item:hover,
 .cof nav.sheet-navigation.tabs .item:hover {
   color: #464331c4;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
+  z-index: 1;
 }
 .cof nav.sheet-tabs.tabs .item.active,
 .cof nav.sheet-navigation.tabs .item.active {
   color: #464331c4;
-  border: 1px inset #736953a6;
+  border: 1px solid #736953a6;
+  border-right: none;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
+  z-index: 2;
+}
+.cof nav.sheet-tabs.tabs .item.active:last-child,
+.cof nav.sheet-navigation.tabs .item.active:last-child {
+  border-right: 1px solid #736953a6;
 }
 .cof .currencies {
   margin: 0 0 5px 0;
