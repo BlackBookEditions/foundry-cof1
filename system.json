@@ -4,16 +4,16 @@
   "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Fantasy</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13",
-    "maximum": "13"
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 13
   },
   "authors": [
     {
-      "name": "Zigmund"
+      "name": "Kristov"
     },
     {
-      "name": "Kristov"
+      "name": "Ajite"
     },
     {
       "name": "Eryan"
@@ -22,7 +22,7 @@
       "name": "Lemeran81"
     },
     {
-      "name": "Ajite"
+      "name": "Zigmund"
     }
   ],
   "esmodules": [
@@ -36,7 +36,7 @@
       "name": "macros",
       "label": "Macros",
       "system": "cof",
-      "path": "./packs/macros.db",
+      "path": "./packs/macros",
       "type": "Macro",
       "tag" : "macro"
     }

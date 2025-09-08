@@ -1,8 +1,8 @@
-.idea
-node_modules
-/foundry.js
-/_assets/
-_data
-package-lock.json
-.github/
-packs/macros/
+# IDE
+styles/**/*.css
+
+# Node Modules
+node_modules/
+
+# Foundry VTT
+packs/
