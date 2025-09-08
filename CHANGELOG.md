@@ -1,7 +1,6 @@
-13.347.0
+13.348.0
 --------
-- Compatibilité V13.347
-- Correction d'un bug dans la gestion des effets actifs des objets équipables
+- Compatibilité V13.348- Correction d'un bug dans la gestion des effets actifs des objets équipables
 
 12.343.1
 --------
